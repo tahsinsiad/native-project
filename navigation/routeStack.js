@@ -1,8 +1,20 @@
 import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
 import Login from '../components/Login';
+import Otp from '../components/Otp';
+import Products from '../screens/products';
 
 const screens = {
+  Category: {
+    screen: Products,
+    navigationOptions: {
+      title: '',
+      headerStyle: {
+        backgroundColor: '#fff',
+        elevation: 0,
+      },
+    },
+  },
   Login: {
     screen: Login,
     navigationOptions: {
@@ -13,9 +25,16 @@ const screens = {
       },
     },
   },
-  //   ReviewDetails: {
-  //     screen: ReviewDetails,
-  //   },
+  Otp: {
+    screen: Otp,
+    navigationOptions: {
+      title: '',
+      headerStyle: {
+        backgroundColor: '#fff',
+        elevation: 0,
+      },
+    },
+  },
 };
 
 // home stack navigator screens
