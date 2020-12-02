@@ -3,8 +3,19 @@ import { createAppContainer } from 'react-navigation';
 import Login from '../components/Login';
 import Otp from '../components/Otp';
 import Products from '../screens/products';
+import CartList from '../components/CartList';
 
 const screens = {
+  Cart: {
+    screen: CartList,
+    navigationOptions: {
+      title: '',
+      headerStyle: {
+        backgroundColor: '#fff',
+        elevation: 0,
+      },
+    },
+  },
   Category: {
     screen: Products,
     navigationOptions: {
