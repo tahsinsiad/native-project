@@ -15,7 +15,6 @@ import ProductCard from './ProductCard';
 const CategoryList = () => {
   return (
     <View style={styles.container}>
-      <StatusBar style="light" />
       <SafeAreaView style={{ flex: 1 }}>
         <SectionList
           contentContainerStyle={{ paddingHorizontal: 10 }}

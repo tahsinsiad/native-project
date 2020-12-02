@@ -6,8 +6,18 @@ import Products from '../screens/products';
 import CartList from '../components/CartList';
 
 const screens = {
-  Cart: {
-    screen: CartList,
+  Login: {
+    screen: Login,
+    navigationOptions: {
+      title: '',
+      headerStyle: {
+        backgroundColor: '#fff',
+        elevation: 0,
+      },
+    },
+  },
+  Otp: {
+    screen: Otp,
     navigationOptions: {
       title: '',
       headerStyle: {
@@ -26,18 +36,8 @@ const screens = {
       },
     },
   },
-  Login: {
-    screen: Login,
-    navigationOptions: {
-      title: '',
-      headerStyle: {
-        backgroundColor: '#fff',
-        elevation: 0,
-      },
-    },
-  },
-  Otp: {
-    screen: Otp,
+  Cart: {
+    screen: CartList,
     navigationOptions: {
       title: '',
       headerStyle: {
