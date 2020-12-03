@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, View, SectionList, SafeAreaView, FlatList } from 'react-native';
-import { SECTIONS } from '../static/categoryData';
+import { SECTIONS } from '../static/shopData';
 import categoryStyles from '../styles/categoryStyles';
 import CategoryCard from './CategoryCard';
 import ProductCard from './ProductCard';

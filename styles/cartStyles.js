@@ -30,7 +30,6 @@ const cartStyles = StyleSheet.create({
     position: 'absolute',
     top: 10,
     right: 10,
-    fontSize: 15,
   },
   price: {
     display: 'flex',

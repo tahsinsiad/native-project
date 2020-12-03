@@ -38,11 +38,11 @@ const screens = {
       },
     },
   },
-  Products: {
+  Shop: {
     screen: DrawerStack,
     navigationOptions: ({ navigation }) => {
       return {
-        headerTitle: () => <Header title="Products" navigation={navigation} />,
+        headerTitle: () => <Header title="Shop" navigation={navigation} />,
         headerLeft: () => null,
       };
     },

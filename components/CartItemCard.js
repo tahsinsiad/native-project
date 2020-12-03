@@ -4,6 +4,7 @@ import { Image, Text, View } from 'react-native';
 import NumericInput from 'react-native-numeric-input';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
+import { MaterialIcons } from '@expo/vector-icons';
 import { changeCartCount } from '../redux/actions/productAction';
 import cartStyles from '../styles/cartStyles';
 
@@ -31,7 +32,12 @@ const CartItemCard = ({ handleChangeCartCount, cartCount }) => {
             onChange={handleChangeCartCount}
           />
         </View>
-        <Text style={cartStyles.crossIcon}>X</Text>
+        <MaterialIcons
+          style={cartStyles.crossIcon}
+          name="close"
+          size={17}
+          color="black"
+        />
       </View>
     </View>
   );
