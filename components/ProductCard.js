@@ -1,38 +1,26 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import PropTypes from 'prop-types';
+import { Image, Text, View } from 'react-native';
+import productStyles from '../styles/productStyles';
 
 const ProductCard = ({ item }) => {
   return (
-    <View style={styles.item}>
+    <View style={productStyles.item}>
       <Image
         source={{
           uri: item.uri,
         }}
-        style={styles.itemPhoto}
+        style={productStyles.itemPhoto}
         resizeMode="cover"
       />
-      <Text style={styles.itemText}>{item.price}</Text>
-      <Text style={styles.itemText}>{item.text}</Text>
+      <Text style={productStyles.itemText}>{item.price}</Text>
+      <Text style={productStyles.itemText}>{item.text}</Text>
     </View>
   );
 };
 
-export default ProductCard;
+ProductCard.propTypes = {
+  item: PropTypes.object,
+};
 
-const styles = StyleSheet.create({
-  item: {
-    margin: 10,
-    flex: 1,
-    borderRadius: 5,
-  },
-  itemPhoto: {
-    width: 150,
-    height: 150,
-    borderRadius: 5,
-  },
-  itemText: {
-    color: '#000',
-    fontSize: 13,
-    marginTop: 5,
-  },
-});
+export default ProductCard;

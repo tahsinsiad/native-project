@@ -1,20 +1,13 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  SectionList,
-  SafeAreaView,
-  FlatList,
-} from 'react-native';
+import { Text, View, SectionList, SafeAreaView, FlatList } from 'react-native';
 import { SECTIONS } from '../static/categoryData';
+import categoryStyles from '../styles/categoryStyles';
 import CategoryCard from './CategoryCard';
 import ProductCard from './ProductCard';
 
 const CategoryList = () => {
   return (
-    <View style={styles.container}>
+    <View style={categoryStyles.container}>
       <SafeAreaView style={{ flex: 1 }}>
         <SectionList
           contentContainerStyle={{ paddingHorizontal: 10 }}
@@ -22,13 +15,13 @@ const CategoryList = () => {
           sections={SECTIONS}
           renderSectionHeader={({ section }) => (
             <>
-              <Text style={styles.sectionHeader}>{section.title}</Text>
+              <Text style={categoryStyles.sectionHeader}>{section.title}</Text>
               {section.horizontal ? (
                 <FlatList
                   horizontal
                   data={section.data}
                   renderItem={({ item }) =>
-                    section.isCat ? (
+                    section.isCategory ? (
                       <CategoryCard category={item} />
                     ) : (
                       <ProductCard item={item} />
@@ -43,7 +36,7 @@ const CategoryList = () => {
             if (section.horizontal) {
               return null;
             }
-            return section.isCat ? (
+            return section.isCategory ? (
               <CategoryCard category={item} />
             ) : (
               <ProductCard item={item} />
@@ -54,20 +47,5 @@ const CategoryList = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
-  sectionHeader: {
-    fontWeight: '800',
-    fontSize: 18,
-    color: '#000',
-    marginTop: 20,
-    marginBottom: 5,
-    marginLeft: 10,
-  },
-});
 
 export default CategoryList;

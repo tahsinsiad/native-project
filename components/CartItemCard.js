@@ -1,14 +1,18 @@
-import React, { useState } from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Image, Text, View } from 'react-native';
 import NumericInput from 'react-native-numeric-input';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
+import { changeCartCount } from '../redux/actions/productAction';
+import cartStyles from '../styles/cartStyles';
 
-const CartItemCard = () => {
-  const [itemCount, setItemCount] = useState(1);
+const CartItemCard = ({ handleChangeCartCount, cartCount }) => {
   return (
     <View style={{ backgroundColor: '#fff' }}>
-      <View style={styles.cartItemWrapper}>
+      <View style={cartStyles.cartItemWrapper}>
         <Image
-          style={styles.cartImage}
+          style={cartStyles.cartImage}
           source={{
             uri: 'https://picsum.photos/id/1016/200',
           }}
@@ -23,48 +27,34 @@ const CartItemCard = () => {
             containerStyle={{ backgroundColor: '#dee0e3' }}
             rightButtonBackgroundColor="#dee0e3"
             leftButtonBackgroundColor="#dee0e3"
-            value={itemCount}
-            onChange={(value) => setItemCount(value)}
+            value={cartCount}
+            onChange={handleChangeCartCount}
           />
         </View>
-        <Text style={styles.crossIcon}>X</Text>
+        <Text style={cartStyles.crossIcon}>X</Text>
       </View>
     </View>
   );
 };
 
-export default CartItemCard;
+CartItemCard.propTypes = {
+  handleChangeCartCount: PropTypes.func,
+  cartCount: PropTypes.any,
+};
 
-const styles = StyleSheet.create({
-  cartItemWrapper: {
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginTop: 20,
-    marginLeft: 20,
-    marginRight: 20,
-    padding: 15,
-    borderWidth: 0,
-    borderColor: 'rgba(255, 255, 255, 1.0)',
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 1,
-    },
-    shadowOpacity: 0.3,
-    shadowRadius: 1.0,
+const mapStateToProps = (state) => {
+  const { product } = state;
+  return {
+    cartCount: product.cartCount,
+  };
+};
 
-    elevation: 2,
-  },
-  cartImage: {
-    width: 100,
-    height: 100,
-    marginRight: 20,
-  },
-  crossIcon: {
-    position: 'absolute',
-    top: 10,
-    right: 10,
-    fontSize: 15,
-  },
-});
+const mapDispatchToProps = (dispatch) => {
+  return {
+    handleChangeCartCount: (val) => dispatch(changeCartCount(val)),
+  };
+};
+
+const withConnect = connect(mapStateToProps, mapDispatchToProps);
+
+export default compose(withConnect)(CartItemCard);

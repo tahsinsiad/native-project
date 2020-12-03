@@ -2,7 +2,7 @@ export const SECTIONS = [
   {
     title: 'Categories',
     horizontal: true,
-    isCat: true,
+    isCategory: true,
     data: [
       {
         key: '1',

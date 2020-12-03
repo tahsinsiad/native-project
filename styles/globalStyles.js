@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-export const globalStyles = StyleSheet.create({
+const globalStyles = StyleSheet.create({
   titleText: {
     fontSize: 40,
     fontWeight: 'bold',
@@ -16,3 +16,4 @@ export const globalStyles = StyleSheet.create({
     backgroundColor: '#FFF',
   },
 });
+export default globalStyles;

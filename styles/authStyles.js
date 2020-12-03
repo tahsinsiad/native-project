@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-export const loginStyles = StyleSheet.create({
+const authStyles = StyleSheet.create({
   inputBox: {
     height: 40,
     borderColor: 'gray',
@@ -14,6 +14,12 @@ export const loginStyles = StyleSheet.create({
     marginTop: 30,
   },
   button: {
-    marginTop: 50,
+    alignItems: 'center',
+    backgroundColor: '#64B6FF',
+    padding: 10,
+  },
+  btnText: {
+    color: '#fff',
   },
 });
+export default authStyles;

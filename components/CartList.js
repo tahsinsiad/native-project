@@ -1,5 +1,7 @@
 import React from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { Button, Text, View } from 'react-native';
+import cartStyles from '../styles/cartStyles';
+import globalStyles from '../styles/globalStyles';
 import CartItemCard from './CartItemCard';
 
 const CartList = ({ navigation }) => {
@@ -7,26 +9,26 @@ const CartList = ({ navigation }) => {
     navigation.navigate('Products');
   };
   return (
-    <View style={{ backgroundColor: '#fff', flex: 1 }}>
+    <View style={globalStyles.container}>
       <CartItemCard />
       <CartItemCard />
       <View style={{ margin: 20 }}>
-        <Text style={styles.address}>Address</Text>
-        <View style={styles.price}>
-          <Text style={styles.text}>Subtotal</Text>
-          <Text style={styles.text}>$300</Text>
+        <Text style={cartStyles.address}>Address</Text>
+        <View style={cartStyles.price}>
+          <Text style={cartStyles.text}>Subtotal</Text>
+          <Text style={cartStyles.text}>$300</Text>
         </View>
-        <View style={styles.price}>
-          <Text style={styles.text}>Discount</Text>
-          <Text style={styles.text}>10%</Text>
+        <View style={cartStyles.price}>
+          <Text style={cartStyles.text}>Discount</Text>
+          <Text style={cartStyles.text}>10%</Text>
         </View>
-        <View style={styles.price}>
-          <Text style={styles.text}>Shipping</Text>
-          <Text style={styles.text}>$100</Text>
+        <View style={cartStyles.price}>
+          <Text style={cartStyles.text}>Shipping</Text>
+          <Text style={cartStyles.text}>$100</Text>
         </View>
-        <View style={styles.total}>
-          <Text style={styles.text}>Total</Text>
-          <Text style={styles.text}>$500</Text>
+        <View style={cartStyles.total}>
+          <Text style={cartStyles.text}>Total</Text>
+          <Text style={cartStyles.text}>$500</Text>
         </View>
         <Button
           color="#64B6FF"
@@ -39,27 +41,3 @@ const CartList = ({ navigation }) => {
 };
 
 export default CartList;
-
-const styles = StyleSheet.create({
-  price: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginBottom: 10,
-  },
-  total: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginBottom: 40,
-    borderTopWidth: 1,
-    paddingTop: 10,
-  },
-  address: {
-    fontSize: 20,
-    marginBottom: 15,
-  },
-  text: {
-    color: '#8c8d8f',
-  },
-});
