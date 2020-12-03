@@ -2,7 +2,10 @@ import React from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
 import CartItemCard from './CartItemCard';
 
-const CartList = () => {
+const CartList = ({ navigation }) => {
+  const handleBackToHomeBtnPress = () => {
+    navigation.navigate('Products');
+  };
   return (
     <View style={{ backgroundColor: '#fff', flex: 1 }}>
       <CartItemCard />
@@ -25,7 +28,11 @@ const CartList = () => {
           <Text style={styles.text}>Total</Text>
           <Text style={styles.text}>$500</Text>
         </View>
-        <Button color="#64B6FF" title="Back to home" />
+        <Button
+          color="#64B6FF"
+          onPress={handleBackToHomeBtnPress}
+          title="Back to home"
+        />
       </View>
     </View>
   );

@@ -1,13 +1,15 @@
+import React from 'react';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
 import Login from '../components/Login';
-import Otp from '../components/Otp';
-import Products from '../screens/products';
-import CartList from '../components/CartList';
+import DrawerStack from './drawerStack';
+import Header from '../shared/header';
+import OtpScreen from '../screens/otp';
+import LoginScreen from '../screens/login';
 
 const screens = {
   Login: {
-    screen: Login,
+    screen: LoginScreen,
     navigationOptions: {
       title: '',
       headerStyle: {
@@ -17,7 +19,7 @@ const screens = {
     },
   },
   Otp: {
-    screen: Otp,
+    screen: OtpScreen,
     navigationOptions: {
       title: '',
       headerStyle: {
@@ -26,24 +28,13 @@ const screens = {
       },
     },
   },
-  Category: {
-    screen: Products,
-    navigationOptions: {
-      title: '',
-      headerStyle: {
-        backgroundColor: '#fff',
-        elevation: 0,
-      },
-    },
-  },
-  Cart: {
-    screen: CartList,
-    navigationOptions: {
-      title: '',
-      headerStyle: {
-        backgroundColor: '#fff',
-        elevation: 0,
-      },
+  Products: {
+    screen: DrawerStack,
+    navigationOptions: ({ navigation }) => {
+      return {
+        headerTitle: () => <Header title="Products" navigation={navigation} />,
+        headerLeft: () => null,
+      };
     },
   },
 };

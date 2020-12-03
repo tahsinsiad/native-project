@@ -3,11 +3,11 @@ import { View, Text, Button, TextInput } from 'react-native';
 import { globalStyles } from '../styles/globalStyles';
 import { loginStyles } from '../styles/loginStyle';
 
-export default function Otp({ navigation }) {
+const Otp = ({ navigation }) => {
   const [value, onChangeText] = React.useState('');
 
   const handleVerifyBtnPress = () => {
-    navigation.navigate('Category');
+    navigation.navigate('Products');
   };
 
   return (
@@ -19,6 +19,8 @@ export default function Otp({ navigation }) {
         style={loginStyles.inputBox}
         onChangeText={(text) => onChangeText(text)}
         value={value}
+        keyboardType="numeric"
+        maxLength={6}
       />
       <Button
         disabled={value.length < 6}
@@ -28,4 +30,5 @@ export default function Otp({ navigation }) {
       />
     </View>
   );
-}
+};
+export default Otp;

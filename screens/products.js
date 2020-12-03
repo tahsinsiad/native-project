@@ -1,10 +1,11 @@
 import React from 'react';
 import CategoryList from '../components/CategoryList';
 
-export default function Products() {
+const ProductsScreen = () => {
   return (
     <>
       <CategoryList />
     </>
   );
-}
+};
+export default ProductsScreen;
