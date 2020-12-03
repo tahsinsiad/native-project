@@ -9,7 +9,7 @@ import globalStyles from '../styles/globalStyles';
 
 const Otp = ({ navigation, handleChangeOtp, otp }) => {
   const handleVerifyBtnPress = () => {
-    navigation.navigate('Products');
+    navigation.navigate('Shop');
   };
 
   return (

@@ -9,7 +9,7 @@ const Welcome = ({ navigation }) => {
     navigation.navigate('Login');
   };
   const handleShopUsWithBtnPress = () => {
-    navigation.navigate('Products');
+    navigation.navigate('Shop');
   };
   return (
     <View style={globalStyles.container}>

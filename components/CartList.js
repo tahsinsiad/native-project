@@ -6,7 +6,7 @@ import CartItemCard from './CartItemCard';
 
 const CartList = ({ navigation }) => {
   const handleBackToHomeBtnPress = () => {
-    navigation.navigate('Products');
+    navigation.navigate('Shop');
   };
   return (
     <View style={globalStyles.container}>

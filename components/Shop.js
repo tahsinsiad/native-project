@@ -5,7 +5,7 @@ import categoryStyles from '../styles/categoryStyles';
 import CategoryCard from './CategoryCard';
 import ProductCard from './ProductCard';
 
-const CategoryList = () => {
+const Shop = () => {
   return (
     <View style={categoryStyles.container}>
       <SafeAreaView style={{ flex: 1 }}>
@@ -48,4 +48,4 @@ const CategoryList = () => {
   );
 };
 
-export default CategoryList;
+export default Shop;

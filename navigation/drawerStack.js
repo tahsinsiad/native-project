@@ -1,12 +1,12 @@
 import { createDrawerNavigator } from 'react-navigation-drawer';
 import CartScreen from '../screens/cart';
-import ProductsScreen from '../screens/products';
+import ShopScreen from '../screens/shop';
 
 const screens = {
-  Products: {
-    screen: ProductsScreen,
+  Shop: {
+    screen: ShopScreen,
     navigationOptions: {
-      title: 'Products',
+      title: 'Shop',
       headerStyle: {
         backgroundColor: '#fff',
         elevation: 0,
